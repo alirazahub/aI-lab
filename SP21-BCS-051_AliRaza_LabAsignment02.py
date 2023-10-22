@@ -42,17 +42,17 @@ def findMin(frontier):
 
 
 def actionSequence(graph, initialState, goalState):
-    sequence = []
+    solution = []
     currentNode = goalState
     while currentNode != initialState:
         parent = graph[currentNode].parent
         for action, _ in graph[parent].actions:
             if action == currentNode:
-                sequence.insert(0, action)
+                solution.insert(0, action)
                 break
         currentNode = parent
-    sequence.insert(0, initialState)
-    return sequence
+    solution.insert(0, initialState)
+    return solution
 
 
 

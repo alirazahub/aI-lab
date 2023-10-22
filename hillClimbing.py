@@ -9,6 +9,7 @@ class Node:
         self.totalCost = totalCost
 
 
+
 def hillClimbing():
     graph = {
         "A": Node("A", None, [("F", 1)], (0, 0), 0),

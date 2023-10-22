@@ -68,3 +68,18 @@ def bfs(graph, start, end):
                 q.visited.append(adjacent)
 
 
+
+print (bfs(graph, 'Arad', 'Bucharest'))
+
+def dfs(graph, start, end):
+    stack = []
+    stack.append(start)
+    while stack:
+        node = stack.pop()
+        print(node, end=" ")
+        if node == end:
+            return True
+        for adjacent in graph[node]:
+            stack.append(adjacent)
+
+print (dfs(graph, 'Arad', 'Bucharest'))
