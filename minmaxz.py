@@ -7,20 +7,22 @@ def minimax (curDepth, nodeIndex,maxTurn, scores, targetDepth):
         return scores[nodeIndex]
      
     if (maxTurn):
-        return max(minimax(curDepth + 1, nodeIndex * 2, 
-                    False, scores, targetDepth), 
-                   minimax(curDepth + 1, nodeIndex * 2 + 1, 
-                    False, scores, targetDepth))
+        return max(minimax(curDepth + 1, nodeIndex * 2, False, scores, targetDepth), 
+                   minimax(curDepth + 1, nodeIndex * 2 + 1, False, scores, targetDepth))
      
     else:
-        return min(minimax(curDepth + 1, nodeIndex * 2, 
-                     True, scores, targetDepth), 
-                   minimax(curDepth + 1, nodeIndex * 2 + 1, 
-                     True, scores, targetDepth))
+        return min(minimax(curDepth + 1, nodeIndex * 2, True, scores, targetDepth), 
+                   minimax(curDepth + 1, nodeIndex * 2 + 1, True, scores, targetDepth))
      
 
+# Example tree:
+#        3
+#      / | \
+#     5  2  9
+#    /|\    |
+#   1 8 4   7
 
-scores = [2, 3, 5, 9, 0, 1, 7, 5]
+scores = [3, 5,2, 9, 1, 8, 4, 7]
 treeDepth = math.log(len(scores), 2)
  
 print("The optimal value is : ", end = "")
